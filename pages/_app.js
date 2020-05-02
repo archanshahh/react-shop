@@ -1,13 +1,24 @@
 import App from "next/app";
-import Layout from "../components/_App/Layout"
+import Layout from "../components/_App/Layout";
+
 class MyApp extends App {
+  static async getInitialProps({ Component, ctx }) {
+    let pageProps = {};
+
+    if (Component.getInitialProps) {
+      pageProps = await Component.getInitialProps(ctx);
+    }
+
+    return { pageProps };
+  }
+
   render() {
-    const { Component } = this.props;
-    return(
+    const { Component, pageProps } = this.props;
+    return (
       <Layout>
-        <Component/>
+        <Component {...pageProps} />
       </Layout>
-    )
+    );
   }
 }
 
