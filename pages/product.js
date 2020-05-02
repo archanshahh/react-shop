@@ -1,4 +1,5 @@
 import axios from 'axios'
+import ProductSummary from '../components/Product/ProductSummary';
 
 function Product({product}) {
   console.log(product)
