@@ -4,7 +4,7 @@ import Router, {useRouter} from 'next/router';
 import NProgress from 'nprogress';
 
 function Header() {
-  const user = false;
+  const user = true;
   const router = useRouter();
   // console.log(router);
   
@@ -43,7 +43,7 @@ function Header() {
           </Menu.Item>
         </Link>
 
-        {user && <Link href="/create">
+        {user && (<Link href="/create">
           <Menu.Item header active={isActive('/create')}>
             <Icon
               name="add square"
@@ -51,10 +51,10 @@ function Header() {
             />
             Create
           </Menu.Item>
-        </Link>}
+        </Link>)}
 
         {user ? (
-          <div>
+          <>
         <Link href="/account">
           <Menu.Item header active={isActive('/')}>
             <Icon
@@ -72,7 +72,7 @@ function Header() {
           />
           Logout
         </Menu.Item>
-        </div>)
+        </>)
           :
         (<>
         <Link href="/login">
