@@ -1,8 +1,10 @@
 import { Button, Form, Icon, Message, Segment } from 'semantic-ui-react';
 import Link from 'next/link';
-import React from 'react';
+import React, { useMemo } from 'react';
 import catchErrors from '../utils/catchErrors';
-
+import axios from 'axios';
+import baseUrl from '../utils/baseUrl';
+import {handleLogin} from '../utils/auth';
 const INITIAL_USER={
   email:"",
   password:""
@@ -24,13 +26,18 @@ function Login() {
     const {name,value} = e.target
     setUser(prevState => ({...prevState,[name]:value}))
   }
-
+ 
   async function handleSubmit(e){
     e.preventDefault()
     try {
       setLoading(true)
       setError('');
-      console.log(user);
+      const url = `${baseUrl}/api/login`
+      const payload = {...user};
+
+      const response = await axios.post(url,payload);
+      handleLogin(response.data);
+      
     } catch (error) {
       catchErrors(error,setError)
     }
