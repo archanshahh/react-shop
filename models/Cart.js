@@ -1,3 +1,4 @@
+import Product from './Product';
 import mongoose from 'mongoose';
 
 const {ObjectId, Number} = mongoose.Schema.Types;

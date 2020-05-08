@@ -4,14 +4,15 @@ import {Segment} from 'semantic-ui-react';
 import {parseCookies} from 'nookies';
 import axios from 'axios';
 import baseUrl from '../utils/baseUrl';
+import React from 'react';
 
 
-function Cart({products}) {
-  console.log(products);
+function Cart({user,products}) {
+  // console.log(products);
   return (
   <Segment> 
-    <CartItemList/>
-    <CartSummary/>
+    <CartItemList user={user} products={products}/>
+    <CartSummary products={products}/>
   </Segment>
   );
 }
@@ -27,7 +28,7 @@ Cart.getInitialProps = async ctx => {
   const payload = {headers : {Authorization:token}};
 
   const response = await axios.get(url,payload);
-  console.log(response.data);
+  // console.log(response.data);
   return {products:response.data};
 
 }
