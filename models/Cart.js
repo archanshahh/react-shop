@@ -1,7 +1,6 @@
 import mongoose from 'mongoose';
 
-
-const {ObjectId} = mongoose.Schema.Types;
+const {ObjectId, Number} = mongoose.Schema.Types;
 
 const CartSchema = new mongoose.Schema({
     user:{
@@ -14,6 +13,6 @@ const CartSchema = new mongoose.Schema({
             product: {type:ObjectId, ref:"Product"}
         }
     ]
-})
+});
 
-export default mongoose.model.Cart || mongoose.model("Cart",CartSchema);
+export default mongoose.models.Cart || mongoose.model("Cart",CartSchema);

@@ -22,6 +22,7 @@ export default async(req,res) => {
 
 async function hanadlePostRequest(req,res){
     const {name,price,description,mediaUrl} = req.body
+    
     try {
         if(!name || !price || !description || !mediaUrl){
             return res.status(422).send("Product missing one or more fields");        
