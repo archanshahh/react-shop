@@ -44,13 +44,18 @@ function CreateProduct() {
   }
 
   async function handleImageUpload() {
-    const data = new FormData();
-    data.append("file", product.media);
-    data.append("upload_preset", "reactshop");
-    data.append("cloud_name", "dblmpu0fs");
-    const response = await axios.post(process.env.CLOUDINARY_URL, data);
-    const mediaUrl = response.data.url;
-    return mediaUrl;
+    try {
+      const data = new FormData();
+      data.append("file", product.media);
+      data.append("upload_preset", "reactshop");
+      data.append("cloud_name", "dblmpu0fs");
+      const response = await axios.post(process.env.CLOUDINARY_URL, data);
+      const mediaUrl = response.data.url;
+      return mediaUrl;
+    } catch (error) {
+      console.error(error);
+    }
+    
   }
 
   async function handleSubmit(event) {
@@ -66,6 +71,7 @@ function CreateProduct() {
       setProduct(INITIAL_PRODUCT);
       setSuccess(true);
     } catch (error) {
+      console.error(error);
       catchErrors(error, setError);
     } finally {
       setLoading(false);
