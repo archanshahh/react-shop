@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 const connection = {};
+require("dotenv").config();
 
 async function connectDb() {
   if (connection.isConnected) {
@@ -12,7 +13,8 @@ async function connectDb() {
     useCreateIndex: true,
     useFindAndModify: false,
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useNewUrlParser:true
   });
   console.log("DB Connected");
   connection.isConnected = db.connections[0].readyState;
