@@ -8,7 +8,6 @@ import React from 'react';
 import cookie from 'js-cookie';
 import catchErrors from '../utils/catchErrors';
 function Cart({user,products}) {
-  // console.log(products);
   const [cartProducts,setCartProducts] = React.useState(products);
   const [success,setSuccess]=React.useState(false);
   const [loading,setLoading]=React.useState(false);
@@ -64,7 +63,6 @@ Cart.getInitialProps = async ctx => {
   const payload = {headers : {Authorization:token}};
 
   const response = await axios.get(url,payload);
-  // console.log(response.data);
   return {products:response.data};
 
 }
