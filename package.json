@@ -3,10 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
-    "start": "next start -p $PORT",
     "build": "next build",
-    "heroku-prebuild": "npm run dev"
+    "start": "next && next start -p $PORT"
   },
   "keywords": [],
   "author": "",
