@@ -1,11 +1,10 @@
 {
   "name": "react-shop",
   "version": "1.0.0",
-  "description": "Project for MERN Stack`",
   "main": "index.js",
   "scripts": {
     "dev": "next",
-    "start": "next start",
+    "start": "next start -p $PORT",
     "build": "next build"
   },
   "keywords": [],
