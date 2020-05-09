@@ -1,6 +1,6 @@
 
 const baseUrl = process.env.NODE_ENV === "production" 
-? 'http://reactshopp.herokuapp.com' 
+? 'https://reactshopp.herokuapp.com' 
 : 'http://localhost:3000';
 
 export default baseUrl;
