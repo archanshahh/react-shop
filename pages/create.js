@@ -45,12 +45,14 @@ function CreateProduct() {
 
   async function handleImageUpload() {
     try {
+      console.log("In image upload");
       const data = new FormData();
       data.append("file", product.media);
       data.append("upload_preset", "reactshop");
       data.append("cloud_name", "dblmpu0fs");
       const response = await axios.post(process.env.CLOUDINARY_URL, data);
       const mediaUrl = response.data.url;
+      console.log("In image upload");
       return mediaUrl;
     } catch (error) {
       console.error(error);

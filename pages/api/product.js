@@ -29,6 +29,7 @@ async function handleGetRequest(req, res) {
 
 async function handlePostRequest(req, res) {
   const { name, price, description, mediaUrl } = req.body;
+  console.log("In product end point "+name+price+description+mediaUrl);
   try {
     if (!name || !price || !description || !mediaUrl) {
       return res.status(422).send("Product missing one or more fields");
