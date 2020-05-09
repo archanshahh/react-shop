@@ -6,3 +6,4 @@ next.config.*
 now.json
 .vercel
 .env
+config

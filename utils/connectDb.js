@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 const connection = {};
+import config from '../config/default.json';
 
 async function connectDb() {
   if (connection.isConnected) {
@@ -10,7 +11,7 @@ async function connectDb() {
   try {
     // Use new database connection
     // console.log(p.env.MONGO_SRV);
-    const db = await mongoose.connect(process.env.MONGO_SRV, {
+    const db = await mongoose.connect(config.MONGO_SRV, {
       useCreateIndex: true,
       useFindAndModify: false,
       useNewUrlParser: true,
