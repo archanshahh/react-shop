@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 const connection = {};
-import config from '../config/default.json';
+const config = require('../config/default.json');
 
 async function connectDb() {
   if (connection.isConnected) {
