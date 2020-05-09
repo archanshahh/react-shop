@@ -9,7 +9,7 @@ async function connectDb() {
   }
   try {
     // Use new database connection
-    const db = await mongoose.connect(String(process.env.MONGO_SRV), {
+    const db = await mongoose.connect("mongodb+srv://archan:1234@cluster0-imrbu.mongodb.net/test?retryWrites=true&w=majority", {
       useCreateIndex: true,
       useFindAndModify: false,
       useNewUrlParser: true,
