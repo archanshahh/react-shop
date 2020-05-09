@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 const connection = {};
-
+import p from '../next.config';
 async function connectDb() {
   if (connection.isConnected) {
     // Use existing database connection
@@ -9,7 +9,8 @@ async function connectDb() {
   }
   try {
     // Use new database connection
-    const db = await mongoose.connect("mongodb+srv://archan:1234@cluster0-imrbu.mongodb.net/test?retryWrites=true&w=majority", {
+    // console.log(p.env.MONGO_SRV);
+    const db = await mongoose.connect(p.env.MONGO_SRV, {
       useCreateIndex: true,
       useFindAndModify: false,
       useNewUrlParser: true,
