@@ -2,6 +2,8 @@ import mongoose from "mongoose";
 const connection = {};
 require("dotenv").config();
 
+const uri = process.env.MONGO_SRV;
+
 async function connectDb() {
   if (connection.isConnected) {
     // Use existing database connection
@@ -9,12 +11,11 @@ async function connectDb() {
     return;
   }
   // Use new database connection
-  const db = await mongoose.connect(process.env.MONGO_SRV, {
+  const db = await mongoose.connect(uri, {
     useCreateIndex: true,
     useFindAndModify: false,
     useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useNewUrlParser:true
+    useUnifiedTopology: true
   });
   console.log("DB Connected");
   connection.isConnected = db.connections[0].readyState;
