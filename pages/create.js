@@ -50,7 +50,8 @@ function CreateProduct() {
       data.append("file", product.media);
       data.append("upload_preset", "reactshop");
       data.append("cloud_name", "dblmpu0fs");
-      console.log(process.env.CLOUDINARY_URL);
+      console.log(process.env);
+      console.log(process.env.IMAGE_URL);
       console.log(data);
       const response = await axios.post(process.env.CLOUDINARY_URL, data);
       const mediaUrl = response.data.url;
