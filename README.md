@@ -1,6 +1,9 @@
+<p align="center"><img height="50" width="150" src="https://github.com/archanshahh/react-shop/blob/master/screenshots/icon.png"/></p>
+
+
 ReactShop
 ===
-- ReactShop is a full-stack e-commerce web app suitable for a wide range of product or service based businesses
+- A full-stack e-commerce web app suitable for a wide range of product or service based businesses
 - Technologies used: React, React Hooks, Node.js, Express, Next.js, MongoDB, Semantic UI
 > For demo, Go here: https://reactshopp.herokuapp.com/
 
