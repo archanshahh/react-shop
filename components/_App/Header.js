@@ -81,6 +81,12 @@ function Header({ user }) {
             </Link>
           </>
         )}
+        <Link href="https://github.com/archanshahh/react-shop" passHref>
+          <Menu.Item header>
+            <Icon name="github" size="large"/>
+            source
+          </Menu.Item>
+        </Link>
       </Container>
     </Menu>
   );

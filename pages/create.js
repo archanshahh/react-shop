@@ -50,13 +50,10 @@ function CreateProduct() {
       data.append("file", product.media);
       data.append("upload_preset", "reactshop");
       data.append("cloud_name", "dblmpu0fs");
-      console.log(process.env.CLOUDINARY_URL);
-      // console.log(process.env.REACT_APP_AAA);
-      console.log(data);
       const response = await axios.post(process.env.CLOUDINARY_URL, data);
       const mediaUrl = response.data.url;
       console.log("Response from cloudinary "+ response.data+"   "+response);
-      console.log("In image upload "+mediaUrl);
+      // console.log("In image upload "+mediaUrl);
       return mediaUrl;
     } catch (error) {
       console.error(error);
