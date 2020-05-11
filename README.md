@@ -9,6 +9,7 @@ Features
 - Authorization and Managing Multiple User Roles (guest, user, admin)
 - Payment Processing
 - Responsive + Mobile-First Design
+- Easy to navigate
 - Password Hashing
 - Order History
 - Add, update and delete products
