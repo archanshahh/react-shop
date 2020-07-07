@@ -21,6 +21,10 @@ Features
 
 Screenshots
 ===
+![Image 9](https://github.com/archanshahh/react-shop/blob/master/screenshots/reactshop.png)
+
+---
+
 ![Image 7](https://github.com/archanshahh/react-shop/blob/master/screenshots/Account%20page.png)
 
 ---
